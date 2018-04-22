@@ -2,21 +2,21 @@
 // Today your goal is to refactor all of this code to use ES6 Classes.
 // The console.log() statements should still return what is expected of them.
 
-// class Parent {
-//   constructor(attributes){
-//     this.gender = attributes.gender;
-//     this.age = attributes.age;
-//     this.name = attributes.name;
-//     this.hometown = attributes.hometown;
-//   }
-//   speak() {
-//     return `Hello, my name is ${this.name}`;
-//   }
-//   greet() {
-//     return `Greetings, my name is ${this.name} and im ${this.age} years old.`;
-//   }
-// } 
-// Parent
+/*class Parent {
+  constructor(attributes){
+    this.gender = attributes.gender;
+    this.age = attributes.age;
+    this.name = attributes.name;
+    this.hometown = attributes.hometown;
+  }
+  speak() {
+    return `Hello, my name is ${this.name}`;
+  }
+  greet() {
+    return `Greetings, my name is ${this.name} and im ${this.age} years old.`;
+  }
+} 
+Parent*/
 
 class GameObject {
   constructor(options) {
@@ -28,16 +28,16 @@ class GameObject {
   }
 }
 
-// class Child extends Parent {
-//   constructor(childAttributes){
-//     super(childAttributes);
-//     this.toys = childAttributes.toys;
-//   }
-//   play() {
-//    return `I love playing with my ${this.toys}`;
-//   }
-// 
-// Child
+/*class Child extends Parent {
+  constructor(childAttributes){
+    super(childAttributes);
+    this.toys = childAttributes.toys;
+  }
+  play() {
+   return `I love playing with my ${this.toys}`;
+  }
+
+Child*/
 
 class CharacterStats extends GameObject {
   constructor(characterStatsOptions){
@@ -50,35 +50,33 @@ class CharacterStats extends GameObject {
   }
 }
 
-// function CharacterStats(characterStatsOptions) {
-//   GameObject.call(this, characterStatsOptions);
-//   this.hp = characterStatsOptions.hp;
-//   this.name = characterStatsOptions.name;
-// }
+/*function CharacterStats(characterStatsOptions) {
+  GameObject.call(this, characterStatsOptions);
+  this.hp = characterStatsOptions.hp;
+  this.name = characterStatsOptions.name;
+}*/
 
-// CharacterStats.prototype = Object.create(GameObject.prototype);
-
-// CharacterStats.prototype.takeDamage = function() {
-//   return `${this.name} took damage.`;
-// };
+/*CharacterStats.prototype = Object.create(GameObject.prototype);
+CharacterStats.prototype.takeDamage = function() {
+  return `${this.name} took damage.`;
+};*/
 
 class Humanoid extends CharacterStats {
   constructor(humanoidOptions){
     super(humanoidOptions);
-  this.faction = humanoidOptions.faction;
-  this.weapons = humanoidOptions.weapons;
-  this.language = humanoidOptions.language;
+    this.faction = humanoidOptions.faction;
+    this.weapons = humanoidOptions.weapons;
+    this.language = humanoidOptions.language;
   }
   greet() {
     return `${this.name} offers a greeting in ${this.language}.`;
   }
 }
 
-// Humanoid.prototype = Object.create(CharacterStats.prototype);
-
-// Humanoid.prototype.greet = function() {
-//   return `${this.name} offers a greeting in ${this.language}.`;
-// };
+/*Humanoid.prototype = Object.create(CharacterStats.prototype);
+Humanoid.prototype.greet = function() {
+  return `${this.name} offers a greeting in ${this.language}.`;
+};*/
 
 const mage = new Humanoid({
   createdAt: new Date(),

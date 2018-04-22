@@ -32,6 +32,7 @@ class Student extends Person {
         this.previousBackground = studentTraits.previousBackground;
         this.className = studentTraits.className;
         this.favSubjects = studentTraits.favSubjects;
+        // this.grade = 70;
     }
     listsSubjects(subject) {
         return `${this.favSubjects} are my favorite subjects`;
@@ -69,21 +70,21 @@ const josh = new Instructor({
 });
 
 const bob = new Instructor({
-      name: 'Bob',
+      name: 'Periwinkle',
       location: 'San Francisco',
       age: 80,
       gender: 'female',
       favLanguage: 'SQL',
       specialty: 'Relational Databases',
-      catchPhrase: `What's up ma bruthas?!`
+      catchPhrase: `What's up?!`
 });
 
 const calvin = new Student({
     name: 'Calvin',
-    location: 'Seattle',
-    age: 99,
+    location: 'NeverEver Land',
+    age: 9001,
     gender: 'male',
-    previousBackground: 'Genius extraordinaire',
+    previousBackground: 'sleepy head',
     className: 'CS10',
     favSubjects: [
         'JavaScript',
@@ -115,13 +116,13 @@ const moises = new ProjectManagers({
     favInstructor: 'Josh'
 });
   
-const jackee = new ProjectManagers({
-    name: 'Jackee',
-    location: 'San Francisco',
-    age: 30,
+const boba = new ProjectManagers({
+    name: 'Barbie Hutt',
+    location: 'Tatooine',
+    age: 35,
     gender: 'female',
     gradClassName: 'CS5',
-    favInstructor: 'Austen'
+    favInstructor: 'myself'
 });
 
 console.log(josh.demo('JavaScript'));
@@ -130,4 +131,4 @@ console.log(calvin.listsSubjects(calvin.favSubjects));
 console.log(calvin.PRAssignment(calvin.favSubjects[0]));
 console.log(calvin.sprintChallenge(calvin.favSubjects[0]));
 console.log(moises.standUp('CS10'));
-console.log(jackee.debugsCode(calvin, 'JavaScript'));
+console.log(boba.debugsCode(calvin, 'JavaScript'));
